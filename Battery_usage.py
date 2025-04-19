@@ -35,7 +35,10 @@ condition_total_km = df['total_km_before'] < df['total_km_after']
 combined_condition = (condition_drivable) & (condition_total_km)
 df_cleaned_strict = df[combined_condition].copy()
 
-
+# แสดงผลลัพธ์
+rows_after = len(df_cleaned_strict)
+print(f"จำนวนแถวหลังกรองตามเงื่อนไขทั้งสอง: {rows_after}")
+print(f"จำนวนแถวที่ถูกลบออก: {rows_before - rows_after}")
 
 #แสดงจำนวนข้อมูลหลังการกรอง
 print("\nข้อมูล 5 แถวแรกหลังกรองตามเงื่อนไข:")
